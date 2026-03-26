@@ -12,11 +12,8 @@ function detectPlatform(): Platform {
   return "unknown";
 }
 
-// TODO: Replace with actual URLs after EAS build / store submission
-const DOWNLOAD_URLS = {
-  android: "#android-download",
-  ios: "#ios-download",
-};
+// TODO: Replace with actual APK URL after EAS build
+const APK_DOWNLOAD_URL = "#apk-download";
 
 export function DownloadCTA() {
   const [platform, setPlatform] = useState<Platform>("unknown");
@@ -30,52 +27,34 @@ export function DownloadCTA() {
       <div className="mx-auto max-w-2xl rounded-2xl border border-weva-border bg-weva-surface p-8 text-center sm:p-12">
         <h2 className="mb-4 text-3xl font-bold">Scarica Weva</h2>
         <p className="mb-8 text-weva-text-secondary">
-          Disponibile per iOS e Android. Gratuita, senza abbonamenti.
+          Scarica direttamente dal browser. Gratuita, senza abbonamenti.
         </p>
 
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          {/* iOS Button */}
-          <a
-            href={DOWNLOAD_URLS.ios}
-            className={`inline-flex items-center gap-3 rounded-xl px-6 py-4 text-lg font-semibold transition ${
-              platform === "ios"
-                ? "bg-weva-primary text-white hover:bg-weva-primary-dark"
-                : "border border-weva-border bg-weva-bg text-weva-text hover:border-weva-primary/40"
-            }`}
-          >
-            <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-            </svg>
-            <div className="text-left">
-              <div className="text-xs opacity-70">Scarica su</div>
-              <div>App Store</div>
-            </div>
-          </a>
+        <a
+          href={APK_DOWNLOAD_URL}
+          download
+          className="inline-flex items-center gap-3 rounded-xl bg-weva-primary px-8 py-4 text-lg font-semibold text-white transition hover:bg-weva-primary-dark"
+        >
+          <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <div className="text-left">
+            <div className="text-xs opacity-70">Download diretto</div>
+            <div>Scarica APK (Android)</div>
+          </div>
+        </a>
 
-          {/* Android Button */}
-          <a
-            href={DOWNLOAD_URLS.android}
-            className={`inline-flex items-center gap-3 rounded-xl px-6 py-4 text-lg font-semibold transition ${
-              platform === "android"
-                ? "bg-weva-primary text-white hover:bg-weva-primary-dark"
-                : "border border-weva-border bg-weva-bg text-weva-text hover:border-weva-primary/40"
-            }`}
-          >
-            <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.27-.86-.31-.16-.69-.04-.86.27l-1.87 3.23C14.89 8.35 13.49 8 12 8s-2.89.35-4.44.94L5.69 5.71c-.16-.31-.54-.43-.86-.27-.31.16-.43.55-.27.86L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" />
-            </svg>
-            <div className="text-left">
-              <div className="text-xs opacity-70">Scarica su</div>
-              <div>Google Play</div>
-            </div>
-          </a>
-        </div>
+        {platform === "ios" && (
+          <p className="mt-6 text-sm text-weva-text-secondary">
+            Stai usando un iPhone? Al momento Weva e' disponibile solo per Android.
+            <br />
+            La versione iOS arrivera' presto.
+          </p>
+        )}
 
-        {platform !== "unknown" && (
+        {platform === "android" && (
           <p className="mt-6 text-sm text-weva-primary">
-            {platform === "ios"
-              ? "Rilevato iPhone — il download iOS e' in evidenza"
-              : "Rilevato Android — il download Android e' in evidenza"}
+            Rilevato Android — clicca per scaricare e installare direttamente.
           </p>
         )}
 
