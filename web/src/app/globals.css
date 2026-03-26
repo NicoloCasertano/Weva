@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-weva-primary: #6C63FF;
+  --color-weva-primary-dark: #5A52D5;
+  --color-weva-bg: #1a1a2e;
+  --color-weva-surface: #16213e;
+  --color-weva-surface-light: #0f3460;
+  --color-weva-text: #FFFFFF;
+  --color-weva-text-secondary: #A0A0B0;
+  --color-weva-accent: #E94560;
+  --color-weva-success: #4CAF50;
+  --color-weva-border: #2A2A4A;
+  --font-sans: var(--font-geist-sans);
+}
+
+body {
+  background: var(--color-weva-bg);
+  color: var(--color-weva-text);
+}

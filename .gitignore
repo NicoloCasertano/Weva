@@ -1,0 +1,18 @@
+node_modules/
+.DS_Store
+*.pem
+.env*.local
+
+# Frontend
+frontend/.expo/
+frontend/ios/
+frontend/android/
+frontend/dist/
+frontend/web-build/
+
+# Web
+web/.next/
+web/out/
+
+# Shared
+packages/shared/dist/

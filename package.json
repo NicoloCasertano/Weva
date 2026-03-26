@@ -1,0 +1,10 @@
+{
+  "name": "weva",
+  "private": true,
+  "scripts": {
+    "dev:web": "pnpm --filter @weva/web dev",
+    "dev:mobile": "pnpm --filter frontend start",
+    "build:web": "pnpm --filter @weva/web build",
+    "typecheck": "pnpm -r typecheck"
+  }
+}

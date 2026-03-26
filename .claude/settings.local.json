@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(orchestrator)",
+      "Skill(solution-architect)",
+      "Bash(npm --version)",
+      "Bash(npx create-expo-app@latest . --template blank-typescript)",
+      "Bash(npx expo:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const fs = require\\(''''expo-file-system''''\\); console.log\\(Object.keys\\(fs\\).filter\\(k => k.includes\\(''''ocument''''\\)\\)\\)\")",
+      "Bash(npm ls:*)",
+      "Bash(find /Users/mac/Desktop/Weva -not -path */node_modules/* -not -path */.claude/* -type d)",
+      "Bash(du -sh /Users/mac/Desktop/Weva/frontend/app*)",
+      "Bash(wc -l /Users/mac/Desktop/Weva/frontend/src/**/*.ts /Users/mac/Desktop/Weva/frontend/app/**/*.tsx)",
+      "Bash(head:*)",
+      "Bash(cat /Users/mac/Desktop/Weva/frontend/app/quote/[id].tsx)",
+      "Bash(wc:*)",
+      "Bash(grep -n \"import\\\\|export\" /Users/mac/Desktop/Weva/frontend/src/**/*.ts /Users/mac/Desktop/Weva/frontend/app/**/*.tsx)",
+      "Bash(find /Users/mac/Desktop/Weva -type f -size +1M -not -path */node_modules/*)",
+      "Bash(du -sh /Users/mac/Desktop/Weva/frontend/*)",
+      "Bash(du -sh /Users/mac/Desktop/Weva/*)",
+      "Skill(code-minimizer)",
+      "Bash(grep -r \"server\\\\|api\\\\|endpoint\\\\|fetch\\\\|axios\\\\|http\" /Users/mac/Desktop/Weva/frontend --include=*.ts --include=*.tsx --include=*.js --include=*.json --exclude-dir=node_modules)",
+      "Bash(ls -la /Users/mac/Desktop/Weva/frontend/app/\\\\\\(tabs\\\\\\)/)",
+      "Bash(ls -la \"/Users/mac/Desktop/Weva/frontend/app/\\(tabs\\)/\")",
+      "Bash(find /Users/mac/Desktop/Weva/frontend -not -path */node_modules/* -not -path */.git/* -type d)",
+      "Bash(find /Users/mac/Desktop/Weva -maxdepth 2 -type f -name *.json -o -name *.yaml -o -name *.yml -o -name *.toml -o -name Dockerfile -o -name .env*)",
+      "Bash(cat \"/Users/mac/Desktop/Weva/frontend/app/\\(tabs\\)/index.tsx\")",
+      "Bash(pnpm install:*)",
+      "Bash(npx create-next-app@latest web --typescript --tailwind --app --src-dir --no-eslint --no-turbopack --no-import-alias --use-pnpm)",
+      "Bash(npx create-next-app@15 web --typescript --tailwind --app --src-dir --no-eslint --no-turbopack --no-import-alias --use-pnpm)",
+      "Bash(npx next:*)",
+      "Bash(gh auth:*)",
+      "Bash(brew install:*)",
+      "Bash(brew link:*)",
+      "Bash(vercel whoami:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
