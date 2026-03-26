@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Weva",
+    "slug": "weva",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "weva",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.weva.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Weva ha bisogno del microfono per registrare note audio e trasformarle in preventivi."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1a2e",
+        "foregroundImage": "./assets/icon.png"
+      },
+      "package": "com.weva.app",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Weva ha bisogno del microfono per registrare note audio e trasformarle in preventivi."
+        }
+      ]
+    ]
+  }
+}
